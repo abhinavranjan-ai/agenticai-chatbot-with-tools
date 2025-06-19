@@ -8,7 +8,7 @@ sdk_version: 1.42.0
 app_file: app.py	
 pinned: false	
 license: apache-2.0
-short_description: An AI chatbot built using an agentic architecture that combines LangGraph and LangChain to enable advanced tool usage and contextual decision-making. Designed for flexible, multi-tool interactions with scalable, flow-based logic.
+short_description: Agentic AI chatbot using LangGraph and LangChain tools.
 ---
 
 # Agentic Chatbot with LangGraph, LangChain, and Python
