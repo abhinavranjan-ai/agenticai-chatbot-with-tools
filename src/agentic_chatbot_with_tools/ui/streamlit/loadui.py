@@ -13,6 +13,7 @@ class LoadStreamlitUI:
         }
     
     def load_streamlit_ui(self):
+        
         st.set_page_config(page_title="🤖 "+ self.config.get_page_title(), layout="wide")
         st.header("🤖 " + self.config.get_page_title())
         
@@ -44,6 +45,12 @@ class LoadStreamlitUI:
                 # Validate API Key
                 if not self.user_controls["OPENAI_API_KEY"]:
                     st.warning("⚠️ Please enter your OpeanAI API Key to proceed. Don't have? refer : https://platform.openai.com/settings/organization/api-keys ")
+
+            os.environ["TAVILY_API_KEY"] = self.user_controls["TAVILY_API_KEY"] = st.session_state["TAVILY_API_KEY"] = st.text_input("TAVILY API KEY", type="password")
+
+            # Validate Tavily API Key
+            if not self.user_controls["TAVILY_API_KEY"]:
+                st.warning("⚠️ Please enter the Tavily Api Key to proceed. Don't have? refer : https://app.tavily.com/home ")
 
             if "state" not in st.session_state:
                 st.session_state.state = self.initialize_session()
